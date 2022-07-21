@@ -7,6 +7,7 @@ import { useGetCryptosQuery } from '../services/cryptoApi';
 import Cryptocurrencies from './Cryptocurrencies';
 import News from './News';
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
+import Loader from './Loader';
 
 const { Title } = Typography;
 
@@ -14,10 +15,10 @@ const HomePage = () => {
   const { data, isFetching } = useGetCryptosQuery(10);
   const { newsData, isFetchingNews } = useGetCryptoNewsQuery();
   // console.log(data);
-  console.log(newsData);
+  // console.log(newsData);
   const globalStats = data?.data?.stats;
 
-  if (isFetching) return 'Loading...';
+  if (isFetching) return <Loader />
 
   return (
     <>

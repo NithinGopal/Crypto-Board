@@ -4,6 +4,7 @@ import moment from 'moment';
 
 import { useGetCryptoNewsQuery } from '../services/cryptoNewsApi';
 import { useGetCryptosQuery } from '../services/cryptoApi';
+import Loader from './Loader';
 
 const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News';
 const { Text, Title } = Typography;
@@ -15,7 +16,7 @@ const News = ({ simplified }) => {
   const { data } = useGetCryptosQuery(100);
   // console.log(cryptoNews);
 
-  if (!cryptoNews?.value) return 'loading...'
+  if (!cryptoNews?.value) return <Loader />
   return (
     <Row gutter={[ 24, 24 ]}>
       {!simplified && (
