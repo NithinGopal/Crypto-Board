@@ -30,7 +30,7 @@ const HomePage = () => {
         <Title level={2} className='home-title'>Top 10 Cryptocurrencies</Title>
         <Title level={5} className='show-more'><Link to='/cryptocurrencies'>Show More...</Link></Title>
       </div>
-      <Cryptocurrencies simplified={true} />
+      <Cryptocurrencies simplified />
       <div className='home-heading-container'>
         <Title level={2} className='home-title'>Latest Crypto News</Title>
         <Title level={5} className='show-more'><Link to='/news'>Show More...</Link></Title>
